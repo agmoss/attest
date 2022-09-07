@@ -5,11 +5,15 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
-    "lint": "next lint",
+    "lint": "eslint --fix --ext .js,.jsx,.ts,.tsx ./src",
+    "format": "prettier --write \"src/**/*{.ts,.tsx}\"",
     "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest",
     "start": "next start",
-    "setup:test": "jest --runInBand --logHeapUsage --detectOpenHandles",
-    "test": "start-server-and-test dev http://localhost:3000 setup:test"
+    "test": "run-s test:*",
+    "run:test": "jest --runInBand --logHeapUsage --detectOpenHandles",
+    "test:wdio": "start-server-and-test dev http://localhost:3000 run:test",
+    "test:lint": "eslint --ext .js,.jsx,.ts,.tsx ./src",
+    "test:prettier": "prettier --check \"src/**/*{.ts,.tsx}\" "
   },
   "dependencies": {
     "@emotion/cache": "latest",
@@ -33,6 +37,8 @@
     "eslint": "latest",
     "eslint-config-next": "latest",
     "jest": "^29.0.2",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.7.1",
     "start-server-and-test": "^1.14.0",
     "ts-jest": "^28.0.8",
     "typescript": "latest"
