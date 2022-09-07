@@ -1,6 +1,6 @@
 # `attest`
 
-> Training material on testing FE & BE apps
+> Training material on testing FE & BE ts apps with jest
 
 ```bash
 attest/

@@ -1,23 +1,46 @@
 {
-  "name": "root",
+  "name": "quest",
+  "version": "0.0.1",
   "private": true,
-  "description": "Training material on testing FE & BE apps",
-  "license": "MIT",
-  "author": "Andrew Moss <andrew@m0ss.dev> (https://m0ss.dev/)",
-  "workspaces": {
-    "packages": ["packages/*"],
-    "nohoist": ["**/@nestjs", "**/@nestjs/**"]
-  },
   "scripts": {
-    "bootstrap": "lerna bootstrap --use-workspaces",
-    "bootstrap:clean": "lerna clean -y && lerna bootstrap --use-workspaces",
-    "test": "lerna run test --stream --parallel"
+    "build": "next build",
+    "dev": "next dev",
+    "lint": "eslint --fix --ext .js,.jsx,.ts,.tsx ./src",
+    "format": "prettier --write \"src/**/*{.ts,.tsx}\"",
+    "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest",
+    "start": "next start",
+    "test": "run-s test:*",
+    "run:test": "jest --runInBand --logHeapUsage --detectOpenHandles",
+    "test:wdio": "start-server-and-test dev http://localhost:3000 run:test",
+    "test:lint": "eslint --ext .js,.jsx,.ts,.tsx ./src",
+    "test:prettier": "prettier --check \"src/**/*{.ts,.tsx}\" "
+  },
+  "dependencies": {
+    "@emotion/cache": "latest",
+    "@emotion/react": "latest",
+    "@emotion/server": "latest",
+    "@emotion/styled": "latest",
+    "@mui/icons-material": "latest",
+    "@mui/material": "latest",
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "webdriverio": "^7.24.0"
   },
   "devDependencies": {
-    "lerna": "^5.5.0"
-  },
-  "engines": {
-    "node": "16.X",
-    "yarn": "1.X"
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^14.4.3",
+    "@types/jest": "^29.0.0",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "eslint": "latest",
+    "eslint-config-next": "latest",
+    "jest": "^29.0.2",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.7.1",
+    "start-server-and-test": "^1.14.0",
+    "ts-jest": "^28.0.8",
+    "typescript": "latest"
   }
 }
