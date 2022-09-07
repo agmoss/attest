@@ -10,7 +10,8 @@
   },
   "scripts": {
     "bootstrap": "lerna bootstrap --use-workspaces",
-    "bootstrap:clean": "lerna clean -y && lerna bootstrap --use-workspaces"
+    "bootstrap:clean": "lerna clean -y && lerna bootstrap --use-workspaces",
+    "test": "lerna run test --stream --parallel"
   },
   "devDependencies": {
     "lerna": "^5.5.0"

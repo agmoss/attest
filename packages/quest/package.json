@@ -1,0 +1,40 @@
+{
+  "name": "quest",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "build": "next build",
+    "dev": "next dev",
+    "lint": "next lint",
+    "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest",
+    "start": "next start",
+    "setup:test": "jest --runInBand --logHeapUsage --detectOpenHandles",
+    "test": "start-server-and-test dev http://localhost:3000 setup:test"
+  },
+  "dependencies": {
+    "@emotion/cache": "latest",
+    "@emotion/react": "latest",
+    "@emotion/server": "latest",
+    "@emotion/styled": "latest",
+    "@mui/icons-material": "latest",
+    "@mui/material": "latest",
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "webdriverio": "^7.24.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^14.4.3",
+    "@types/jest": "^29.0.0",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "eslint": "latest",
+    "eslint-config-next": "latest",
+    "jest": "^29.0.2",
+    "start-server-and-test": "^1.14.0",
+    "ts-jest": "^28.0.8",
+    "typescript": "latest"
+  }
+}
