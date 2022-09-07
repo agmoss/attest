@@ -4,9 +4,10 @@
   "description": "Training material on testing FE & BE apps",
   "license": "MIT",
   "author": "Andrew Moss <andrew@m0ss.dev> (https://m0ss.dev/)",
-  "workspaces": [
-    "packages/*"
-  ],
+  "workspaces": {
+    "packages": ["packages/*"],
+    "nohoist": ["**/@nestjs", "**/@nestjs/**"]
+  },
   "scripts": {
     "bootstrap": "lerna bootstrap --use-workspaces",
     "bootstrap:clean": "lerna clean -y && lerna bootstrap --use-workspaces"
